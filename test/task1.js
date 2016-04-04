@@ -4,6 +4,9 @@ var should = require('chai').should();
 
 
 describe('City of Cartesia [TASK1]', function() {
+  before(function () {
+        chai.config.includeStack = false;
+    });
   it('Must be TRUE', function () {
     isValidWalk(['n','s','n','s','n','s','n','s','n','s']).should.equal(true);
   });

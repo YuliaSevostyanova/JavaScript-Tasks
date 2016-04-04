@@ -4,6 +4,9 @@ var should = require('chai').should();
 
 
 describe('Unique In Order [TASK2]', function() {
+  before(function () {
+        chai.config.includeStack = false;
+    });
   it('Words', function () {
     uniqueInOrder('AAAABBBCCDAABBB').should.to.eql(['A', 'B', 'C', 'D', 'A', 'B']);
     uniqueInOrder('ABBCcAD').should.to.eql(['A', 'B', 'C', 'c', 'A', 'D']);
