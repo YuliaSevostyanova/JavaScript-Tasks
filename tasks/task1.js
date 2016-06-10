@@ -8,5 +8,30 @@
   Return false otherwise.
 */
 module.exports = function (walkCoords) {
-  //your perfect code here
+   if (walkCoords.length<=10)
+  { 
+     var x=0;
+     var y=0;
+
+    for (item in walkCoords)
+    {
+	switch (walkCoords[item]){
+	case 'n': y--;
+		break;
+	case 's': y++;
+		break;
+        case 'w': x--;
+		break;
+	case 'e': x++;
+		break;
+	}
+    }
+ 
+   if (x==0 && y==0) 
+	{return true;}
+   else 
+ 	{return false;}
+
+  }
+   else return false;
 }
