@@ -6,5 +6,39 @@
   Return YES, if Vasya can sell a ticket to each person and give the change. Otherwise return NO.
 */
 module.exports = function (queue) {
-  //your perfect code here
+  var flag=false;
+     var bills=[0,0,0]
+     for(i=0;i<queue.length;i++)
+     {
+	flag=false;
+	if(queue[i]==25) 
+        {
+	   bills[0]++;
+	   flag=true;
+	}
+	if(queue[i]==50 && bills[0]>0) 
+	{
+	    bills[0]--;
+	    bills[1]++;
+	    flag=true;
+	}
+	if(queue[i]==100)
+	{
+	    if (bills[1]>0 && bills[0]>0)
+	    {
+		bills[1]--;
+		bills[0]--;
+  		bills[2]++;
+		flag=true
+	    }
+	    if (bills[0]>2)
+	    {
+		bills[0]=bills[0]-3;
+  		bills[2]++;
+		flag=true
+	    }
+	}
+        if(!flag)return "NO";
+     }
+     return "YES";
 }
